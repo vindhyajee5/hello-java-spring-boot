@@ -31,3 +31,9 @@ steps:
   inputs:
     targetPath: '$(Pipeline.Workspace)'
     publishLocation: 'pipeline'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker'
+    repository: 'vindhyajee5/airways'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
